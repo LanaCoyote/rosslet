@@ -51,10 +51,9 @@ a {
 /* Rosslet Element Styles */
 .rslt_el {
   display:  inline-block;
-  padding:  20px 0 0 20px;
   margin:   0;
   width:    95%;
-  height:   40px;
+  height:   60px;
   
   font-size:        12pt;
   font-weight:      bold;
@@ -64,6 +63,7 @@ a {
 
 .rslt_el input[type="text"] {
   display:  inline;
+  padding:  20px;
   width:    100%;
 
   background: transparent;
