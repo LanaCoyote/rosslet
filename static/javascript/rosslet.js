@@ -94,6 +94,28 @@ function ross_show_controls( ) {
   document.getElementById( "rslt_showhide_link" ).innerHTML = "Hide Controls"
 }
 
+function ross_open_font_window( id ) {
+  ross_close_font_window( );
+  document.getElementById( "rslt_wrapper" ).innerHTML += _wrap_modal( _create_font_form_html( id ) );
+}
+
+function ross_close_font_window( ) {
+  var win = document.getElementById( "rslt_font_window" );
+  if ( win ) {
+    win.parentNode.removeChild( win );
+  }
+}
+
+function ross_apply_font_window( id ) {
+  var elem        = document.getElementById( "elem_" + id )
+
+  elem.style.fontFamily = document.getElementById( "modal_font-family" ).value;
+  elem.style.fontWeight = document.getElementById( "modal_font-weight" ).value;
+  elem.style.fontStyle  = document.getElementById( "modal_font-style" ).value;
+
+  ross_close_font_window( );
+}
+
 function _get_new_elem_id( ) {
   var id          = current_element;
   current_element = current_element + 1;
@@ -101,7 +123,9 @@ function _get_new_elem_id( ) {
 }
 
 function _create_elem_html( id ) {
-  return "<div id='elem_" + id + "' class='rslt_el'><input id='elem_" + id + "_input' type='text' value='Lorem ipsum dolor sit amet' onchange='javascript:ross_save_element_text( " + id + " )'></div>\n";
+  return "<div id='elem_" + id + "' class='rslt_el'>" +
+    "<input id='elem_" + id + "_input' type='text' value='Lorem ipsum dolor sit amet' onchange='javascript:ross_save_element_text( " + id + " )'>" +
+    "</div>\n";
 }
 
 function _create_ctrlblock_html( id ) {
@@ -125,7 +149,30 @@ function _create_ctrl_inputbox_html( id, input ) {
 }
 
 function _create_close_html( id ) {
-  return "<div class='rslt_close'><a id='close_" + id + "' href='javascript:ross_close( " + id + " )' class='rslt_closebutton'><i class='fa fa-trash fa-fw'></i></a></div>\n";
+  return "<div class='rslt_close'>" +
+    "<a id='font_" + id + "' href='javascript:ross_open_font_window( " + id + " )' class='rslt_fontbutton'><i class='fa fa-font fa-fw'></i></a>" +
+    "<a id='close_" + id + "' href='javascript:ross_close( " + id + " )' class='rslt_closebutton'><i class='fa fa-trash fa-fw'></i></a>" +
+    "</div>\n";
+}
+
+function _wrap_modal( html ) {
+  return "<div id='rslt_font_window' class='rslt_modal'>" + html + "</div>";
+}
+
+function _create_font_form_html( id ) {
+  return _create_style_attr_input( "font-family", "sans-serif" ) + 
+    _create_style_attr_input( "font-weight", "bold" ) + 
+    _create_style_attr_input( "font-style", "normal" ) +
+    _create_button( "Cancel", "ross_close_font_window( )" ) +
+    _create_button( "OK", "ross_apply_font_window( " + id + " )" );
+}
+
+function _create_style_attr_input( attr, def ) {
+  return "<div class='rslt_control'><span class='rslt_control_label'>" + attr + "</span><input id='modal_" + attr + "' type='text' value='" + def + "'></div><br>\n";
+}
+
+function _create_button( text, func ) {
+  return "<a class='rslt_button' href='javascript:" + func + "'>" + text + "</a>\n"
 }
 
 window.onload = function () {
@@ -138,7 +185,7 @@ window.onload = function () {
   document.getElementById( "ctrl_1_fgcolor" ).placeholder = "Enter a Foreground Color";
   document.getElementById( "ctrl_2_bgcolor" ).setAttribute( 'value', '#5A5A5A' )
   document.getElementById( "ctrl_2_fgcolor" ).setAttribute( 'value', 'white' )
-  document.getElementById( "elem_1_input" ).setAttribute( 'value', 'Welcome to Rosslet! Enter colors into the controls on the right to style this text.')
+  document.getElementById( "elem_1_input" ).setAttribute( 'value', 'Welcome to Rosslet! Use the controls on the right to style this text.')
   document.getElementById( "elem_2_input" ).setAttribute( 'value', 'For example, this text is white on a gray background.')
   document.getElementById( "elem_3_input" ).setAttribute( 'value', 'Delete lines by clicking the trash can next to their controls. Add them by clicking the \"Add New Line\" button.')
   document.getElementById( "elem_4_input" ).setAttribute( 'value', 'You can also enter your own text by clicking on these lines.')
