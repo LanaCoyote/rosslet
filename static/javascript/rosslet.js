@@ -128,4 +128,21 @@ function _create_close_html( id ) {
   return "<div class='rslt_close'><a id='close_" + id + "' href='javascript:ross_close( " + id + " )' class='rslt_closebutton'><i class='fa fa-trash fa-fw'></i></a></div>\n";
 }
 
-window.onload = ross_add_element;
+window.onload = function () {
+  ross_add_element( );
+  ross_add_element( );
+  ross_add_element( );
+  ross_add_element( );
+
+  document.getElementById( "ctrl_1_bgcolor" ).placeholder = "Enter a Background Color";
+  document.getElementById( "ctrl_1_fgcolor" ).placeholder = "Enter a Foreground Color";
+  document.getElementById( "ctrl_2_bgcolor" ).setAttribute( 'value', '#5A5A5A' )
+  document.getElementById( "ctrl_2_fgcolor" ).setAttribute( 'value', 'white' )
+  document.getElementById( "elem_1_input" ).setAttribute( 'value', 'Welcome to Rosslet! Enter colors into the controls on the right to style this text.')
+  document.getElementById( "elem_2_input" ).setAttribute( 'value', 'For example, this text is white on a gray background.')
+  document.getElementById( "elem_3_input" ).setAttribute( 'value', 'Delete lines by clicking the trash can next to their controls. Add them by clicking the \"Add New Line\" button.')
+  document.getElementById( "elem_4_input" ).setAttribute( 'value', 'You can also enter your own text by clicking on these lines.')
+
+  ross_update_bgcolor( 2 );
+  ross_update_fgcolor( 2 );
+};
