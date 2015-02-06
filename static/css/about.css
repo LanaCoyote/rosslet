@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+
+  background-color: #333;
+
+  color:            #A3A3A3;
+  font-family:      "Arvo",serif;
+  font-weight:      bold;
+}
+
+#rslt_content h2 {
+  color:  #FFF;
+}
+
+#rslt_content p {
+  font-family: sans-serif;
+}

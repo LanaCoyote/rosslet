@@ -1,0 +1,32 @@
+{% extends "default.html" %}
+
+{% block head %}
+<script src="/static/javascript/rosslet.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block header %}
+      <div id="rslt_topcontrol">
+        <h2>Global Properties:</h2>
+        <div id="rslt_bgcolor" class="rslt_control">
+          <span class="rslt_control_label">BG:</span>
+          <input id="ctrl_bgcolor" type="text" onchange="javascript:ross_update_bgcolor( 0 )" value="#FFF">
+        </div>
+        <div id="rslt_fgcolor" class="rslt_control">
+          <span class="rslt_control_label">FG:</span>
+          <input id="ctrl_fgcolor" type="text" onchange="javascript:ross_update_fgcolor( 0 )" value="#000">
+        </div>
+      </div> <!-- rslt_topcontrol -->
+{% endblock %}
+
+{% block body %}
+    <div id="rslt_wrapper">
+      <div id="rslt_doc">
+      </div> <!-- rslt_doc -->
+
+      <div id="rslt_sidecontrol" class="rslt_nondoc">
+        <div id="rslt_ctrlspace">
+        </div>
+        <a href="javascript:ross_add_element( )" id="rslt_add" class="rslt_button">+ Add Another Bar</a>
+      </div> <!-- rslt_sidecontrol -->
+    </div> <!-- rslt_wrapper -->
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "default.html" %}
+
+{% block head %}
+<link href="/static/css/about.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+    <div id="rslt_content" class="rslt_nondoc">
+      <h2>What is Rosslet?</h2>
+      <p>Rosslet is a simple webpage designed to help test color palettes. Simply add bars, give them colors, and check their appearance immediately. Quickly check how text appears with any color on any backdrop with no hassles.</p>
+
+      <h2>How does it work?</h2>
+      <p>Every "bar" in the Rosslet document can be given a background (BG) and a foreground (FG) color using the controls on the right side. Simply enter the colors you want to test for your foreground and background and watch Rosslet work! If you don't specify a color, Rosslet uses the global properties given at the top of the page.</p>
+
+      <h2>What background colors can I use?</h2>
+      <p>Anything that fits in a background style, including (but not limited to) hex colors, RGBA structures, gradients, and offsite images.</p>
+
+      <h2>What foreground colors can I use?</h2>
+      <p>Only colors that work as a color style, such as hex colors. Unfortunately you cannot change the font family or styling at this time.</p>
+
+      <h2>How does it work?</h2>
+      <p>Rosslet runs on Flask to deliver pages and uses simple JavaScript for site functionality.</p>
+
+      <a href="/">Go back</a>
+    </div> <!-- rslt_wrapper -->
+{% endblock %}

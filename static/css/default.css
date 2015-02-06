@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: #FFF;
+  text-decoration: underline;
+  margin: 0;
+}
+
+/* Classes */
+/* Rosslet Non-document Styles */
+.rslt_nondoc {
+  padding: 0.2in;
+
+  background-color: #333;
+
+  color:            #A3A3A3;
+  font-family:      "Arvo",serif;
+  font-weight:      bold;
+}
+
+.rslt_nondoc h1,h2,h3,h4 {
+  margin:       0;
+  line-height:  100%;
+}
+
+/* Rosslet Control Styles */
+.rslt_ctrlblock {
+  height:         60px;
+
+  vertical-align: middle;
+}
+
+.rslt_control {
+  display:  inline-block;
+  padding:  0.2in;
+}
+
+.rslt_control input[type="text"] {
+  display:  inline-block;
+  margin:   0;
+  margin-left: 0.2in;
+  padding:  0.2em;
+
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+
+/* Rosslet Element Styles */
+.rslt_el {
+  display:  inline-block;
+  padding:  20px 0 0 20px;
+  margin:   0;
+  width:    95%;
+  height:   40px;
+  
+  line-height:      100%;
+  font-weight:      bold;
+}
+
+/* Rosslet Button Styles */
+a.rslt_button {
+  display:          inline-block;
+  margin:           0.2in;
+  padding:          0.5em 4em;
+
+  background-color: #A3A3A3;
+
+  color:            #333;
+  text-decoration:  none;
+}
+
+a.rslt_button:hover {
+  background-color: #FFF;
+}
+
+/* Rosslet Close Button Styles */
+.rslt_close {
+  display:  inline-block;
+  padding:  0 0.2in;
+}
+
+a.rslt_closebutton {
+  color:            #A3A3A3;
+  text-decoration:  none;
+}
+
+/* IDs */
+/* Rosslet Header Styles */
+#rslt_header {
+  position:      relative;
+  border-bottom: 2px solid #A3A3A3;
+}
+
+/* Rosslet Title Styles */
+#rslt_title {
+  display: inline-block;
+}
+
+/* Rosslet Top Control Styles */
+#rslt_topcontrol {
+  position: absolute;
+  right:    0;
+  top:      0;
+}
+
+#rslt_topcontrol h2 {
+  display:  inline;
+}
+
+/* Rosslet Wrapper Styles */
+#rslt_wrapper {
+  position: relative;
+  width:    100%;
+  margin:   0;
+  padding:  0;
+}
+
+/* Rosslet Content Styles */
+#rslt_content { }
+
+/* Rosslet Document Styles */
+#rslt_doc {
+  display:  inline-block;
+  width:    100%;
+
+  font-family: sans-serif;
+}
+
+/* Rosslet Side Control Styles */
+#rslt_sidecontrol {
+  position:       absolute;
+  right:          0;
+  top:            0;
+  margin:         0;
+  padding:        0;
+
+  border-left:    2px solid #A3A3A3;
+  border-bottom:  2px solid #A3A3A3;
+
+  text-align:     center;
+}
+
+/* Rosslet Footer Styles */
+#rslt_footer {
+  position:   fixed;
+  width:      100%;
+  padding:    0 0.5in;
+  margin:     0;
+  bottom:     0;
+
+  border-top: 2px solid #A3A3A3;
+
+  font-size:  10pt;
+}

@@ -1,0 +1,1 @@
+Rosslet is a color palette picker that lets you see what your palette will look like while you make it.
