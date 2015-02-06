@@ -8,14 +8,19 @@
 
 {% block header %}
       <div id="rslt_topcontrol">
-        <h2>Global Properties:</h2>
-        <div id="rslt_bgcolor" class="rslt_control">
-          <span class="rslt_control_label">BG:</span>
-          <input id="ctrl_bgcolor" type="text" onchange="javascript:ross_update_bgcolor( 0 )" value="#FFF">
-        </div>
-        <div id="rslt_fgcolor" class="rslt_control">
-          <span class="rslt_control_label">FG:</span>
-          <input id="ctrl_fgcolor" type="text" onchange="javascript:ross_update_fgcolor( 0 )" value="#000">
+        <div id="rslt_globals">
+          <h3>Global Properties:</h3>
+          <div id="rslt_bgcolor" class="rslt_control">
+            <span class="rslt_control_label">BG:</span>
+            <input id="ctrl_bgcolor" type="text" onchange="javascript:ross_update_bgcolor( 0 )" value="#FFF">
+          </div>
+          <div id="rslt_fgcolor" class="rslt_control">
+            <span class="rslt_control_label">FG:</span>
+            <input id="ctrl_fgcolor" type="text" onchange="javascript:ross_update_fgcolor( 0 )" value="#000">
+          </div>
+        </div> <!-- rslt_glovals -->
+        <div id="rslt_showhide">
+          <a href="javascript:ross_hide_controls( )" id="rslt_showhide_link">Hide Controls</a>
         </div>
       </div> <!-- rslt_topcontrol -->
 {% endblock %}

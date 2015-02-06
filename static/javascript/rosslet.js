@@ -75,6 +75,18 @@ function ross_update_fgcolor( id ) {
   }
 }
 
+function ross_hide_controls( ) {
+  document.getElementById( "rslt_sidecontrol" ).style.display = "none";
+  document.getElementById( "rslt_showhide_link" ).href = "javascript:ross_show_controls( )";
+  document.getElementById( "rslt_showhide_link" ).innerHTML = "Show Controls"
+}
+
+function ross_show_controls( ) {
+  document.getElementById( "rslt_sidecontrol" ).style.display = "block";
+  document.getElementById( "rslt_showhide_link" ).href = "javascript:ross_hide_controls( )";
+  document.getElementById( "rslt_showhide_link" ).innerHTML = "Hide Controls"
+}
+
 function _get_new_elem_id( ) {
   var id          = current_element;
   current_element = current_element + 1;

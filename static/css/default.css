@@ -34,7 +34,7 @@ a {
 
 .rslt_control {
   display:  inline-block;
-  padding:  0.2in;
+  padding:  0.1in;
 }
 
 .rslt_control input[type="text"] {
@@ -50,9 +50,9 @@ a {
 
 /* Rosslet Element Styles */
 .rslt_el {
-  display:  inline-block;
+  display:  block;
   margin:   0;
-  width:    95%;
+  width:    auto;
   height:   60px;
   
   font-size:        12pt;
@@ -64,7 +64,7 @@ a {
 .rslt_el input[type="text"] {
   display:  inline;
   padding:  20px;
-  width:    100%;
+  width:    auto;
 
   background: transparent;
 
@@ -124,8 +124,13 @@ a.rslt_closebutton {
   top:      0;
 }
 
-#rslt_topcontrol h2 {
+#rslt_topcontrol h3 {
   display:  inline;
+}
+
+#rslt_showhide {
+  padding: 0 0.2in;
+  text-align: right;
 }
 
 /* Rosslet Wrapper Styles */
