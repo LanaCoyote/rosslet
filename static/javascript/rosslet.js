@@ -160,14 +160,17 @@ function _wrap_modal( html ) {
 }
 
 function _create_font_form_html( id ) {
-  return _create_style_attr_input( "font-family", "sans-serif" ) + 
-    _create_style_attr_input( "font-weight", "bold" ) + 
-    _create_style_attr_input( "font-style", "normal" ) +
+  var elem = document.getElementById( "elem_" + id );
+
+  return _create_style_attr_input( "font-family", elem.style.fontFamily, "sans-serif" ) + 
+    _create_style_attr_input( "font-weight", elem.style.fontWeight, "bold" ) + 
+    _create_style_attr_input( "font-style", elem.style.fontStyle, "normal" ) +
     _create_button( "Cancel", "ross_close_font_window( )" ) +
     _create_button( "OK", "ross_apply_font_window( " + id + " )" );
 }
 
-function _create_style_attr_input( attr, def ) {
+function _create_style_attr_input( attr, def, def2 ) {
+  if (!def) { def = def2 }
   return "<div class='rslt_control'><span class='rslt_control_label'>" + attr + "</span><input id='modal_" + attr + "' type='text' value='" + def + "'></div><br>\n";
 }
 
