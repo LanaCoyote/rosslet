@@ -40,6 +40,7 @@ function ross_update_bgcolor( id ) {
       elem.style.background = "transparent";
     } else {
       // set the background to the given color
+      bgcolor.setAttribute( 'value', bgcolor.value )
       elem.style.background = bgcolor.value;
     }
 
@@ -65,6 +66,7 @@ function ross_update_fgcolor( id ) {
     if ( fgcolor === "" ) {
       elem.style.color = document.getElementById( "rslt_doc" ).color;
     } else {
+      fgcolor.setAttribute( 'value', fgcolor.value )
       elem.style.color  = fgcolor.value;
     }
     return elem.style.color;
@@ -73,6 +75,11 @@ function ross_update_fgcolor( id ) {
     document.body.style.color = fgcolor;
     return document.body.style.color;
   }
+}
+
+function ross_save_element_text( id ) {
+  var elem = document.getElementById( "elem_" + id + "_input" );
+  elem.setAttribute( 'value', elem.value );
 }
 
 function ross_hide_controls( ) {
@@ -94,7 +101,7 @@ function _get_new_elem_id( ) {
 }
 
 function _create_elem_html( id ) {
-  return "<div id='elem_" + id + "' class='rslt_el'><input type='text' value='Lorem ipsum dolor sit amet'></div>\n";
+  return "<div id='elem_" + id + "' class='rslt_el'><input id='elem_" + id + "_input' type='text' value='Lorem ipsum dolor sit amet' onchange='javascript:ross_save_element_text( " + id + " )'></div>\n";
 }
 
 function _create_ctrlblock_html( id ) {
